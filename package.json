@@ -2,8 +2,9 @@
   "name": "mvc-tech-blog",
   "version": "1.0.0",
   "description": "![Github license](https://img.shields.io/badge/license-MIT-blue.svg)",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start" : "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
