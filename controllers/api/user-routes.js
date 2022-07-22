@@ -61,6 +61,29 @@ router.post('/', (req, res) => {
     });
 });
 
+// POST /api/login
+router.post('/login', (req, res) => {
+    const email = req.body.email
+    /* JSON body
+    {
+        "email" : "newemail@example.com"
+        "password" : "password1"
+    }
+    */
+   User.findOne({
+        where: {
+            email: email
+        }
+   })
+    .then(dbUserData => {
+        if (!dbUserData) {
+            res.status(400).json({ message: "We can't find that email address." });
+            return;
+        }
+        res.json({ user: dbUserData });
+    });
+});
+
 // PUT /api/users/1
 router.put('/:id', (req, res) => {
     const userId = req.params.id;
