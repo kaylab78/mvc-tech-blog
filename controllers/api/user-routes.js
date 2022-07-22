@@ -15,10 +15,12 @@ router.get('/', (req, res) => {
 
 // GET /api/users/1
 router.get('/:id', (req, res) => {
+    const userId = req.params.id;
+
     User.findOne({
         attributes: { exclude: ['password'] },
         where: {
-            id: req.params.id
+            id: userId
         }
     })
         .then(dbUserData => {
@@ -36,6 +38,10 @@ router.get('/:id', (req, res) => {
 
 // POST /api/users
 router.post('/', (req, res) => {
+    const username = req.body.username;
+    const email = req.body.email;
+    const password = req.body.password;
+
     /* JSON body
     {
         "username" : "newwebdev1",
@@ -44,9 +50,9 @@ router.post('/', (req, res) => {
     }
     */
    User.create({
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password
+    username: username,
+    email: email,
+    password: password
    })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
@@ -57,6 +63,8 @@ router.post('/', (req, res) => {
 
 // PUT /api/users/1
 router.put('/:id', (req, res) => {
+    const userId = req.params.id;
+
     /* JSON body
     {
         "username" : "newwebdev1",
@@ -67,7 +75,7 @@ router.put('/:id', (req, res) => {
    User.update(req.body, {
     individualHooks: true,
     where: {
-        id: req.params.id
+        id: userId
     }
    })
     .then(dbUserData => {
@@ -85,9 +93,11 @@ router.put('/:id', (req, res) => {
 
 // DELETE /api/users/1
 router.delete('/:id', (req, res) => {
+    const userId = req.params.id;
+
     User.destroy({
         where: {
-            id: req.params.id
+            id: userId
         }
     })
         .then(dbUserData => {
