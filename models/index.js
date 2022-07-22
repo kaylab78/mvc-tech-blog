@@ -1,3 +1,4 @@
 const User = require('./User');
 
-model.exports = { User };
+
+module.exports = { User };
