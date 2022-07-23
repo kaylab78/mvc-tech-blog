@@ -1,8 +1,10 @@
 <h2>Read the Latest Posts</h2>
 
 <ul>
+    {{#each posts as |post|}}
     <li>
         <h3>{{title}}</h3>
-        <p>{{created_at}}</p>
+        <p>Posted on {{created_at}} by {{user.username}}</p>
     </li>
+    {{/each}}
 </ul>

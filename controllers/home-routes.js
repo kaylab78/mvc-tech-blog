@@ -1,17 +1,29 @@
 const router = require('express').Router();
+const sequelize = require('../config/connection');
+const { Post, User, Comment } = require('../models');
 
+// GET all posts
 router.get('/', (req, res) => {
-    // Specify which template to use.
-    res.render('homepage', {
-        id: 1,
-        post_body: "This is the first time I've used Handlebars.js.",
-        title: "Handlebar.js",
-        created_at: new Date(),
-        comments: [{}, {}],
-        user: {
-            username: 'newwebdev'
-        }
-    });
+    Post.findAll({
+        attributes: ['id', 'title', 'created_at'],
+        include: [
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
+    })
+        
+        .then(dbPostData => {
+            // .get({ plain: true }) is the Sequelize method used to serialize the object down to only the necessary properties.
+            const posts = dbPostData.map(post => post.get({ plain: true }));
+
+            res.render('homepage', { posts });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 module.exports = router;
