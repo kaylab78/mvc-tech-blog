@@ -22,7 +22,7 @@ View the deployed application on Heroku: [https://agile-headland-59274.herokuapp
 - [Express.js](https://expressjs.com/)
 - [express-handlebars](https://www.npmjs.com/package/express-handlebars)
 - [express-session](https://www.npmjs.com/package/express-session)
-- [JawsDB]()
+- [JawsDB](https://elements.heroku.com/addons/jawsdb)
 - [MySQL2](https://www.npmjs.com/package/mysql2)
 - [Node.js](https://nodejs.dev/)
 - [Sequelize](https://www.npmjs.com/package/sequelize)
