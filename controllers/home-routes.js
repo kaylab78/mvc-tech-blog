@@ -26,4 +26,9 @@ router.get('/', (req, res) => {
         });
 });
 
+// GET /login
+router.get('/login', (req, res) => {
+    res.render('login');
+});
+
 module.exports = router;
