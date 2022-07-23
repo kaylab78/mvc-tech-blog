@@ -5,6 +5,7 @@ const { Post, User } = require('../../models');
 router.get('/', (req, res) => {
     Post.findAll({
         attributes: ['id', 'title', 'post_body', 'created_at'],
+        order: [['created_at', 'DESC']],
         include: [
             {
                 model: User,
@@ -74,10 +75,15 @@ router.post('/', (req, res) => {
 });
 
 // PUT /api/posts/1 
-// Updates post title
 router.put('/:id', (req, res) => {
     const postId = req.params.id;
 
+    /* JSON body
+    {
+        "title" : "Updated title"
+        "post_body" : "Updated body"
+    }
+    */
     Post.update(req.body, {
         where: {
             id: postId
