@@ -10,6 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
 
+// { force: true } makes the tables recreate if there are association changes. See boot camp module 13.3.5
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
 });
