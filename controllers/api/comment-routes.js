@@ -3,7 +3,12 @@ const { Comment } = require('../../models');
 
 // GET /api/comments
 router.get('/', (req, res) => {
-
+    Comment.findAll()
+        .then(dbCommentData => res.json(dbCommentData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 // POST /api/comments
@@ -33,7 +38,24 @@ router.post('/', (req, res) => {
 
 // DELETE /api/comments/1
 router.delete('/:id', (req, res) => {
+    const commentId = req.params.id;
 
+    Comment.destroy({
+        where: {
+            id: commentId
+        }
+    })
+        .then(dbCommentData => {
+            if (!dbCommentData) {
+                res.status(404).json({ message: "We can't find a comment witht this id." });
+                return;
+            }
+            res.json(dbCommentData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 module.exports = router;
