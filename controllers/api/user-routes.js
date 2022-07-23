@@ -61,12 +61,12 @@ router.post('/', (req, res) => {
     });
 });
 
-// POST /api/login
+// POST /api/users/login
 router.post('/login', (req, res) => {
-    const email = req.body.email
+    const email = req.body.email;
     /* JSON body
     {
-        "email" : "newemail@example.com"
+        "email" : "email@example.com"
         "password" : "password1"
     }
     */
@@ -80,7 +80,15 @@ router.post('/login', (req, res) => {
             res.status(400).json({ message: "We can't find that email address." });
             return;
         }
-        res.json({ user: dbUserData });
+        
+        // Checks user's password
+        const validPassword = dbUserData.checkPassword(req.body.password);
+        if (!validPassword) {
+            res.status(400).json({ message: 'Incorrect password' });
+            return;
+        }
+
+        res.json({ user: dbUserData, message: "You're logged in." });
     });
 });
 
