@@ -18,7 +18,7 @@ Comment.belongsTo(User, {
 });
 
 // A comment can only belong to one post
-Comment.belongsTo(User, {
+Comment.belongsTo(Post, {
     foreignKey: 'post_id'
 });
 
