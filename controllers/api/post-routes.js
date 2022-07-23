@@ -4,7 +4,7 @@ const { Post, User } = require('../../models');
 // GET /api/posts
 router.get('/', (req, res) => {
     Post.findAll({
-        attributes: ['id', 'post_body', 'title', 'created_at'],
+        attributes: ['id', 'title', 'post_body', 'created_at'],
         include: [
             {
                 model: User,
@@ -27,7 +27,7 @@ router.get('/:id', (req, res) => {
         where: {
             id: postId
         },
-        attributes: ['id', 'post_body', 'title', 'created_at'],
+        attributes: ['id', 'title', 'post_body', 'created_at'],
         include: [
             {
                 model: User,
@@ -61,36 +61,30 @@ router.post('/', (req, res) => {
         "user_id" : 1
     }
     */
-   Post.create({
-    title: title,
-    post_body: postBody,
-    user_id: userId
-   })
-    .then(dbPostData => res.json(dbPostData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+    Post.create({
+        title: title,
+        post_body: postBody,
+        user_id: userId
+    })
+        .then(dbPostData => res.json(dbPostData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 // PUT /api/posts/1 
 // Updates post title
 router.put('/:id', (req, res) => {
-    const postTitle = req.body.title;
     const postId = req.params.id;
 
-    Post.update(
-        {
-            title: postTitle
-        },
-        {
-            where: {
-                id: postId
-            }
+    Post.update(req.body, {
+        where: {
+            id: postId
         }
-    )
+    })
         .then(dbPostData => {
-            if(!dbPostData) {
+            if (!dbPostData) {
                 res.status(404).json({ message: "We can't find a post with this id." });
                 return;
             }
