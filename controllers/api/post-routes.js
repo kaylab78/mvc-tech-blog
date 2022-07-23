@@ -73,4 +73,33 @@ router.post('/', (req, res) => {
     });
 });
 
+// PUT /api/posts/1 
+// Updates post title
+router.put('/:id', (req, res) => {
+    const postTitle = req.body.title;
+    const postId = req.params.id;
+
+    Post.update(
+        {
+            title: postTitle
+        },
+        {
+            where: {
+                id: postId
+            }
+        }
+    )
+        .then(dbPostData => {
+            if(!dbPostData) {
+                res.status(404).json({ message: "We can't find a post with this id." });
+                return;
+            }
+            res.json(dbPostData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 module.exports = router;
