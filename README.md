@@ -2,7 +2,7 @@
 ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description
-View the deployed application on Heroku:
+View the deployed application on Heroku: [https://agile-headland-59274.herokuapp.com/](https://agile-headland-59274.herokuapp.com/)
 
 ## Table of Contents
 - [Installation](#installation)
@@ -22,6 +22,7 @@ View the deployed application on Heroku:
 - [Express.js](https://expressjs.com/)
 - [express-handlebars](https://www.npmjs.com/package/express-handlebars)
 - [express-session](https://www.npmjs.com/package/express-session)
+- [JawsDB]()
 - [MySQL2](https://www.npmjs.com/package/mysql2)
 - [Node.js](https://nodejs.dev/)
 - [Sequelize](https://www.npmjs.com/package/sequelize)
