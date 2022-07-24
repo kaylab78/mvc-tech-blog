@@ -1,7 +1,23 @@
 <article>
     <h3>{{post.title}}</h3>
-    <p>{{post.post_body}}</p>
-    <p>Posted by {{post.user.username}} on {{post.created_at}}</p>
+    <p>
+        {{post.post_body}}
+        </br>
+        <em>Posted by {{post.user.username}} on {{post.created_at}}</em>
+    </p>
+</article>
+
+<form class="content-form">
+    <div>
+        <textarea name="comment-body"></textarea>
+    </div>
+
+    <div>
+        <button type="submit">Add Comment</button>
+    </div>
+</form>
+
+<div>
     <h4>Comments</h4>
     {{#each post.comments}}
     <p>
@@ -10,4 +26,6 @@
         <em>Posted by {{user.username}} on {{created_at}}</em>
     </p>
     {{/each}}
-</article>
+</div>
+
+<script src="/javascript/comment.js"></script>
