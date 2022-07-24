@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // GET /api/posts
 router.get('/', (req, res) => {
@@ -66,7 +67,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST /api/posts
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     const title = req.body.title;
     const postBody = req.body.post_body;
     const userId = req.session.user_id;
@@ -91,7 +92,7 @@ router.post('/', (req, res) => {
 });
 
 // PUT /api/posts/1 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     const postId = req.params.id;
 
     /* JSON body
@@ -119,7 +120,7 @@ router.put('/:id', (req, res) => {
 });
 
 // DELETE /api/posts/1
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     const postId = req.params.id;
 
     Post.destroy({
