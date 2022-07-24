@@ -2,5 +2,12 @@
     <h3>{{post.title}}</h3>
     <p>{{post.post_body}}</p>
     <p>Posted by {{post.user.username}} on {{post.created_at}}</p>
-    <p>{{post.comments.length}} comment(s)</p>
+    <h4>Comments</h4>
+    {{#each post.comments}}
+    <p>
+        {{comment_text}}
+        </br>
+        <em>Posted by {{user.username}} on {{created_at}}</em>
+    </p>
+    {{/each}}
 </article>
