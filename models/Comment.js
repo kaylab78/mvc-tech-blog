@@ -15,10 +15,12 @@ Comment.init(
         },
         comment_text: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false
+            /* When I removed this validation, the comment functionality worked.
             validate: {
                 len: [1]
             }
+            */
         },
         user_id: {
             type: DataTypes.INTEGER,
