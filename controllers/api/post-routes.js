@@ -69,7 +69,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     const title = req.body.title;
     const postBody = req.body.post_body;
-    const userId = req.body.user_id;
+    const userId = req.session.user_id;
 
     /* JSON body
     {
