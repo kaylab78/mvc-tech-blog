@@ -14,16 +14,7 @@
 </form>
 {{/if}}
 
-<div>
-    <h4>Comments</h4>
-    {{#each post.comments}}
-    <p>
-        {{comment_text}}
-        </br>
-        <em>Posted by {{user.username}} on {{created_at}}</em>
-    </p>
-    {{/each}}
-</div>
+{{> comments post.comments}}
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
