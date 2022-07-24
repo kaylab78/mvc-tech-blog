@@ -7,6 +7,7 @@
     </p>
 </article>
 
+{{#if loggedIn}}
 <form class="content-form">
     <div>
         <textarea name="comment-body"></textarea>
@@ -16,6 +17,7 @@
         <button type="submit">Add Comment</button>
     </div>
 </form>
+{{/if}}
 
 <div>
     <h4>Comments</h4>
