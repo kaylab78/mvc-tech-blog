@@ -4,8 +4,8 @@
   "description": "![Github license](https://img.shields.io/badge/license-MIT-blue.svg)",
   "main": "server.js",
   "scripts": {
-    "start" : "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,8 @@
     "express-session": "^1.17.3",
     "mysql2": "^2.3.3",
     "sequelize": "^6.21.3"
+  },
+  "devDependencies": {
+    "jest": "^28.1.3"
   }
 }
