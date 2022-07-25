@@ -1,10 +1,10 @@
 <div>
-    <h4>Comments</h4>
+    <h4 class="comment-h4">Comments</h4>
     {{#each this}}
     <p>
         {{comment_text}}
         </br>
-        <em>Posted by {{user.username}} on {{format_date created_at}}</em>
+        <span class="post-credit">Posted by {{user.username}} on {{format_date created_at}}</span>
     </p>
     {{/each}}
 </div>
