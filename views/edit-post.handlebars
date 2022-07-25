@@ -1,18 +1,18 @@
 <article>
-    <a href="/dashboard">&larr; Back to Dashboard</a>
-    <h2>Edit Post</h2>
+    {{!-- <a href="/dashboard" class="dashboard-return">Go Back to Dashboard</a> --}}
+    <h2 class="page-name">Edit Post</h2>
     <form class="edit-post-form">
         <div>
             <input name="post-title" type="text" value="{{post.title}}" />
             <input name="post-body" type="textarea" value="{{post.post_body}}" />
         </div>
         <div>
-            <em>Posted by you on {{format_date post.created_at}}</em>
+            <span class="post-credit">Posted by you on {{format_date post.created_at}}</span>
             </br>
-            <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+            <a href="/post/{{post.id}}" class="comment-count">{{post.comments.length}} comment(s)</a>
         </div>
-        <button type="submit">Save Post</button>
-        <button type="button" class="delete-post-btn">Delete Post</button>
+        <button type="submit" class="btn">Save Post</button>
+        <button type="button" class="delete-post-btn btn">Delete Post</button>
     </form>
     
     <form class="comment-form">
@@ -20,7 +20,7 @@
             <textarea name="comment-body"></textarea>
         </div>
         <div>
-            <button type="submit">Add Comment</button>
+            <button type="submit" class="btn">Add Comment</button>
         </div>
     </form>
 

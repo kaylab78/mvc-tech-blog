@@ -207,6 +207,33 @@ input[type="textarea"] {
     padding-top: 8px;
 }
 
+/* Edit post page */
+.dashboard-return {
+    text-align: left;
+    color: var(--third-color);
+    text-decoration: none;
+}
+
+.dashboard-return:hover {
+    text-align: left;
+    color: var(--fourth-color);
+    text-decoration: none;
+}
+
+.comment-count {
+    font-size: 14px;
+    font-style: italic;
+    text-decoration: none;
+    color: var(--third-color);
+}
+
+.comment-count:hover {
+    font-size: 14px;
+    font-style: italic;
+    text-decoration: none;
+    color: var(--fourth-color);
+}
+
 /* Footer */
 footer {
     color: var(--second-color);
