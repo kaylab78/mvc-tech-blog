@@ -18,12 +18,12 @@
                 <li>
                     <a href="/">Home</a>
                 </li>
-                {{#if loggedIn}}
                 <li>
                     <a href="/dashboard">Dashboard</a>
                 </li>
+                {{#if loggedIn}}
                 <li>
-                    <button id="logout">Logout</button>
+                    <button id="logout" class="btn-no-style">Logout</button>
                 </li>
                 {{else}}
                 <li>

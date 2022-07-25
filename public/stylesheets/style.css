@@ -1,4 +1,78 @@
 * {
-    background-color: white;
-    color: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --first-color: #fff;
+    --second-color: #000;
+    --third-color: #0e90ad;
+    --fourth-color: #2F6C7A;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--first-color);
+    color: var(--second-color);
+}
+
+/* Header and Navigation Section */
+header {
+    background-color: var(--third-color);
+    padding: 20px 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+header a {
+    color: var(--first-color);
+    text-decoration: none;
+}
+
+header a:hover {
+    color: var(--fourth-color);
+    text-decoration: none;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    gap: 15px;
+    font-size: 18px;
+}
+
+.btn-no-style {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--first-color);
+}
+
+.btn-no-style:hover {
+    color: var(--fourth-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--fourth-color);
+    color: var(--first-color);
+    padding: 10px 35px;
+}
+
+footer p {
+    font-size: 10px;
 }
