@@ -71,7 +71,7 @@ router.post('/', (req, res) => {
    })
     .then(dbUserData => {
         // Initiate session and run callback function once complete
-        res.session.save(() => {
+        req.session.save(() => {
             req.session.user_id = dbUserData.id;
             req.session.username = dbUserData.username;
             req.session.loggedIn = true;

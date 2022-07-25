@@ -39,6 +39,16 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// GET /signup
+router.get('/signup', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    
+    res.render('login');
+});
+
 // GET /post/1
 router.get('/post/:id', (req, res) => {
     const postId = req.params.id;
