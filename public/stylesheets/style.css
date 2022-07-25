@@ -66,13 +66,65 @@ header nav ul {
     color: var(--fourth-color);
 }
 
-/* Footer */
-footer {
-    background-color: var(--fourth-color);
-    color: var(--first-color);
-    padding: 10px 35px;
+/* Main section */
+main {
+    padding: 50px 35px;
 }
 
-footer p {
-    font-size: 10px;
+.btn {
+    background-color: var(--fourth-color);
+    border: none;
+    padding: 8px 30px;
+    color: var(--first-color);
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 10px 0px;
+}
+
+.btn:hover {
+    background-color: var(--third-color);
+    border: none;
+    padding: 8px 30px;
+    color: var(--first-color);
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 10px 0px;
+}
+
+/* Login and Sign Up Forms */
+.form-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    font-size: 16px;
+}
+
+/* Reference W3Schools */
+input[type=text] {
+    width: 100%;
+    padding: 8px;
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+
+input[type=password] {
+    width: 100%;
+    padding: 8px;
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+/* End reference */
+
+/* Footer */
+footer {
+    color: var(--second-color);
+    padding: 10px 35px;
+    font-size: 12px;
 }

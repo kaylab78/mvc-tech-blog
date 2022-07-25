@@ -36,4 +36,6 @@ This project is licensed under the MIT license.
 [License: MIT License](https://opensource.org/licenses/MIT)
 
 ## Credits
-Boot Camp Module 13 & 14
+Boot Camp Modules 13  14
+
+*CSS Forms.* n.d. W3Schools. Retrieved July 24, 2022 from [https://www.w3schools.com/css/css_form.asp](https://www.w3schools.com/css/css_form.asp)
