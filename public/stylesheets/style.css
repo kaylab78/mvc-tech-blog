@@ -9,6 +9,7 @@
     --second-color: #000;
     --third-color: #0e90ad;
     --fourth-color: #2F6C7A;
+    --fifth-color: gray;
 }
 
 body {
@@ -153,6 +154,7 @@ ul.post-list {
 .post-credit {
     font-style: italic;
     font-size: 14px;
+    color: var(--fifth-color);
 }
 
 /* Single Post and Comments */
@@ -172,6 +174,10 @@ textarea {
 .comment-h4 {
     margin-top: 16px;
     margin-bottom: 8px;
+}
+
+.comment-list {
+    margin-bottom: 16px;
 }
 
 /* Footer */
