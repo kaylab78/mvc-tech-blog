@@ -1,6 +1,8 @@
-<h3><a href="/post/{{id}}">{{title}}</a></h3>
-<p>
+<h3 class="post-title">
+    <a href="/post/{{id}}">{{title}}</a>
+</h3>
+<p class="post-content">
     {{post_body}}
     <br>
-    <em>Posted by {{user.username}} on {{format_date created_at}}</em>
+    <span class="post-credit">Posted by {{user.username}} on {{format_date created_at}}</span>
 </p>

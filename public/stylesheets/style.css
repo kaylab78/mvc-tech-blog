@@ -68,7 +68,11 @@ header nav ul {
 
 /* Main section */
 main {
-    padding: 50px 35px;
+    padding: 30px 35px 50px 35px;
+}
+
+.page-name {
+    padding: 0 0 15px 0;
 }
 
 .btn {
@@ -94,7 +98,7 @@ main {
 /* Login and Sign Up Forms */
 .form-flex {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     align-content: center;
     flex-wrap: nowrap;
@@ -121,6 +125,35 @@ input[type=password] {
     border: 1px solid lightgray;
 }
 /* End reference */
+/* End Login and Sign Up Forms */
+
+/* Homepage and Post Info */
+ul.post-list {
+    list-style-type: none;
+}
+
+.post-list li {
+    padding: 0 0 16px 0;
+}
+
+.post-title a {
+    text-decoration: none;
+    color: var(--fourth-color);
+}
+
+.post-title a:hover {
+    text-decoration: none;
+    color: var(--third-color);
+}
+
+.post-content {
+    font-size: 16px;
+}
+
+.post-credit {
+    font-style: italic;
+    font-size: 14px;
+}
 
 /* Footer */
 footer {
