@@ -1,7 +1,7 @@
-<h2>Your Dashboard</h2>
+<h2 class="page-name">Your Dashboard</h2>
 
 <section>
-    <h3>Create New Post</h3>
+    <h3 class="dashboard-h3">Create New Post</h3>
     <form class="new-post-form">
         <div>
             <label for="post-title">Title</label>
@@ -13,18 +13,18 @@
             <input type="textarea" id="post-body" name="post-body" />
         </div>
 
-        <button type="submit">Create</button>
+        <button type="submit" class="btn">Create</button>
     </form>
 </section>
 
 {{#if posts.length}}
 <section>
-    <h3>Your Posts</h3>
-    <ul>
+    <h3 class="dashboard-h3">Your Posts</h3>
+    <ul class="post-list">
         {{#each posts as |post|}}
         <li>
             {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}">Edit Post</a>
+            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Post</a>
         </li>
         {{/each}}
     </ul>

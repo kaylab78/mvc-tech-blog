@@ -180,6 +180,33 @@ textarea {
     margin-bottom: 16px;
 }
 
+/* Dashboard */
+input[type="textarea"] {
+    width: 100%;
+    padding: 8px;
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+
+.dashboard-h3 {
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.edit-link {
+    color: var(--third-color);
+    text-decoration: none;
+    padding-top: 8px;
+}
+
+.edit-link:hover {
+    color: var(--fourth-color);
+    text-decoration: none;
+    padding-top: 8px;
+}
+
 /* Footer */
 footer {
     color: var(--second-color);
