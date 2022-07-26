@@ -2,6 +2,10 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 
+// User.hasMany(Post, {
+//     foreignKey: 'user_id'
+// });
+
 // A post can only have one user, but a user can have many posts
 Post.belongsTo(User, {
     foreignKey: 'user_id',
