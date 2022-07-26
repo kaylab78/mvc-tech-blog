@@ -4,8 +4,7 @@
     <form class="edit-post-form">
         <div>
             <input name="post-title" type="text" value="{{post.title}}" />
-            <input name="post-body" type="text" id="post-body" value="{{post.post_body}}" />
-            {{!-- <textarea name="post-body" id="postBody" value="{{post.post_body}}"></textarea> --}}
+            <input name="post-body" type="textarea" value="{{post.post_body}}" />
         </div>
         <div>
             <span class="post-credit">Posted by you on {{format_date post.created_at}}</span>
