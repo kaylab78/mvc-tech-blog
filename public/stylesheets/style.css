@@ -100,11 +100,23 @@ main {
 .form-flex {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-start;
     align-content: center;
     flex-wrap: nowrap;
     flex-direction: row;
     font-size: 16px;
+}
+
+.login-form {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 40px 50px 50px 50px;
+}
+
+.signup-form {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 40px 50px 50px 50px;
 }
 
 /* Reference W3Schools */
